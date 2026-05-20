@@ -2,7 +2,7 @@ terraform {
   required_providers {
     aws = {
       source  = "hashicorp/aws"
-      version = "= 5.82.0"
+      version = "= 5.31.0"
     }
   }
 
@@ -14,5 +14,7 @@ terraform {
 }
 
 provider "aws" {
-  region = var.aws_region
+  region                   = var.aws_region
+  skip_credentials_validation = true
+  skip_requesting_account_id = true
 }
