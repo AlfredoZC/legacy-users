@@ -3,7 +3,7 @@ resource "aws_security_group" "app_sg" {
   description = "Security Group para legacy-users"
 
   ingress {
-    description = "Acceso a la aplicación"
+    description = "Acceso a la aplicacion"
     from_port   = var.app_port
     to_port     = var.app_port
     protocol    = "tcp"
