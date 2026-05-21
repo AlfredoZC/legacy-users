@@ -25,7 +25,7 @@ variable "ami_id" {
 variable "iam_instance_profile" {
   description = "Nombre del perfil IAM"
   type        = string
-  default     = "LabRole"
+  default     = "LabInstanceProfile"
 }
 
 variable "my_public_ip" {
