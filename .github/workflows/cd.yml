@@ -21,6 +21,11 @@ jobs:
           aws-session-token: ${{ secrets.AWS_SESSION_TOKEN }}
           aws-region: us-east-1
 
+      - name: Instalar Terraform
+        uses: hashicorp/setup-terraform@v3
+        with:
+          terraform_version: "1.6.0"
+
       - name: Actualizar clave GPG de HashiCorp
         run: |
           wget -O- https://apt.releases.hashicorp.com/gpg | \
@@ -30,19 +35,7 @@ jobs:
       - name: Terraform Init
         working-directory: terraform
         run: terraform init
-      - name: Instalar Terraform
-        uses: hashicorp/setup-terraform@v3
-        with:
-          terraform_version: "1.6.0"
-
-      - name: Terraform Init
-        working-directory: terraform
-        run: terraform init
 
       - name: Terraform Plan
         working-directory: terraform
-        run: terraform plan
-
-      - name: Terraform Apply
-        working-directory: terraform
-        run: terraform apply -auto-approve
+        run: t
