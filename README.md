@@ -19,7 +19,7 @@ Este proyecto implementa una arquitectura DevOps completa para la aplicación `l
 ### Infraestructura como Código (IaC)
 Arquitectura modular en Terraform con backend remoto S3:
 
-​```
+```
 terraform/
 ├── main.tf            # Orquestador de módulos
 ├── providers.tf       # AWS provider + backend S3
@@ -28,7 +28,7 @@ terraform/
 └── modules/
     ├── network/       # Security Groups
     └── compute/       # EC2 + user_data
-​```
+```
 
 ### Backend Remoto
 - **Bucket S3:** `legacy-users-terraform-josealfredo`
